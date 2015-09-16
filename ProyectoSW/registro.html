@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registro de usuario</title>
+		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+	</head>
+	
+	<body>
+			<form id="registro" name="registro" onSubmit="vervalores()">
+					Nombre y Apellidos: <input type="text" name="nombre" required></br></br>
+					Correo: <input type="text" name="correo" required></br></br>
+					Password: <input type="password" name="password" required></br></br>
+					Telefono: <input type="text" name="telefono" required></br></br>
+					Especialidad: <select form="registro" name="especialidad" required>
+						<option>Ingenieria del Software</option>
+						<option>Ingenieria de Computadoras</option>
+						<option>Ingenieria Artificial</option>
+					</select></br></br>
+					Foto: <input type="file" name="foto" accept="image/*"></br></br>
+					<input type="submit" name="submit" value="Registrar">
+			</form> 
+
+
+<script>
+	function vervalores(){
+		var sAux="";
+		var frm = document.getElementById("registro");
+		for (i=1;i<frm.elements.length;i++)
+		{
+			sAux += "NOMBRE: " + frm.elements[i].name + " ";
+			sAux += "VALOR: " + frm.elements[i].value + "\n" ;
+		}
+		alert(sAux);
+	}
+</script>
+
+	</body>
+</html>
