@@ -1,7 +1,7 @@
 
 	
 	
-	var nameRe = /^[A-Za-z0-9 ]{3,20}$/;
+	var nameRe = /^[A-Za-z ]{3,20}$/;
 	var emailRe = /^[a-z]+[0-9]{3}@ikasle\.ehu\.(es|eus)$/i 
 	var telRe = /^[0-9]{9}$/;
 	var passRe =  /^[A-Za-z0-9!@#$%^&*()_]{6,20}$/;
