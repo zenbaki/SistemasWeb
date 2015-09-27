@@ -3,36 +3,30 @@
 	<head>
 		<title>Registro de usuario</title>
 		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+		<script src="funciones.js"></script>
 	</head>
 	
 	<body>
-			<form id="registro" name="registro" onSubmit="vervalores()">
+			<form id="registro" name="registro" onSubmit="return validar(this)">
 					Nombre y Apellidos: <input type="text" name="nombre" required></br></br>
 					Correo: <input type="text" name="correo" required></br></br>
 					Password: <input type="password" name="password" required></br></br>
 					Telefono: <input type="text" name="telefono" required></br></br>
-					Especialidad: <select form="registro" name="especialidad" required>
+					Especialidad: <select id="especialidad" form="registro" name="especialidad" onchange="addOther()" required>
 						<option>Ingenieria del Software</option>
-						<option>Ingenieria de Computadoras</option>
-						<option>Ingenieria Artificial</option>
-					</select></br></br>
-					Foto: <input type="file" name="foto" accept="image/*"></br></br>
+						<option>Ingenieria de Computadores</option>
+						<option>Computacion</option>
+						<option> Otra</option>
+					</select> <input id="otro" type="text" name="otro" disabled="true" style="display:none" required></br></br>
+					
+					
+					Foto: <input type="file" name="foto" accept="image/*" onchange="loadFile(event)"></br></br>
 					<input type="submit" name="submit" value="Registrar">
+					<img id="vista" height="300" width="300"/>
 			</form> 
 
 
-<script>
-	function vervalores(){
-		var sAux="";
-		var frm = document.getElementById("registro");
-		for (i=1;i<frm.elements.length;i++)
-		{
-			sAux += "NOMBRE: " + frm.elements[i].name + " ";
-			sAux += "VALOR: " + frm.elements[i].value + "\n" ;
-		}
-		alert(sAux);
-	}
-</script>
+
 
 	</body>
 </html>
